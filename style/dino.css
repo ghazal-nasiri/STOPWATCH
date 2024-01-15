@@ -1,0 +1,411 @@
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url("../fonts/ChakraPetch/ChakraPetch-Bold.ttf") format("truetype"),
+        url("../fonts/ChakraPetch/ChakraPetch-Bold.woff2") format("woff2"),
+        url("../fonts/ChakraPetch/ChakraPetch-Bold.woff") format("woff"),
+        url("../fonts/ChakraPetch/ChakraPetch-Bold.eot") format("embedded-opentype")
+    ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    padding: 15px;
+}
+
+:root {
+    --color1: rgb(255, 255, 255);
+    --color2: rgb(0, 0, 0);
+}
+
+.dark-theme {
+    --color1: rgb(0, 0, 0);
+    --color2: rgb(255, 255, 255);
+}
+
+.container {
+    border: 4px solid black;
+    border-radius: 30px;
+    position: relative;
+    min-width: 250px;
+    max-width: 1500px;
+    margin: auto;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.play-pause-btn,
+.reset,
+.container,
+.earth div::after {
+    background-color: var(--color2);
+
+}
+
+.play-pause-btn,
+.reset,
+.theme-dark-light {
+    color: var(--color1);
+}
+
+body,
+.stopwatch,
+.cactuses div,
+.cloud1,
+.cloud2,
+.cloud3,
+.menu .line,
+.earth div {
+    background-color: var(--color1);
+}
+
+.container,
+.theme-dark-light,
+.theme,
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme div,
+a,
+.menu,
+.start,
+.reset {
+    cursor: pointer;
+}
+
+.cactuses div,
+.sky div,
+.theme div,
+.theme a,
+.theme,
+.menu,
+.sky,
+.cactuses,
+.earth,
+.earth div::after,
+.earth div,
+.sky::after {
+    position: absolute;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+}
+
+/* ------------ menu --------- */
+.menu {
+    top: 22px;
+    width: 35px;
+    right: 20px;
+    height: 20px;
+    z-index: 100;
+}
+
+.menu .line {
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    transition: all .2s;
+}
+
+.menu .line-1 {
+    width: 50%;
+    transform: translate(0, 0);
+}
+
+.menu .line-2 {
+    transform: translate(0, 6px);
+}
+
+.menu .line-3 {
+    width: 50%;
+    transform: translate(100%, 12px);
+}
+
+/* --- open menu --- */
+.openmenu .line-1 {
+    transform: translate(1px, 2px) rotate(40deg);
+}
+
+.openmenu .line-2 {
+    transform: translate(0, 5px) rotate(-40deg);
+}
+
+.openmenu .line-3 {
+    transform: translate(calc(100% - 2px), 8px) rotate(40deg);
+
+}
+
+/* ----- themes ----- */
+.theme {
+    width: 0px;
+    overflow: hidden;
+    height: 50px;
+    border-radius: 30px;
+    left: 10px;
+    top: 7px;
+    z-index: 100;
+    transition: all .2s;
+}
+
+/* --- theme dark light --- */
+.theme-dark-light {
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+.b-w-160 {
+    width: 160px;
+    border: 2px solid var(--color1);
+}
+
+/* --- theme red --- */
+.theme .theme-red {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(red, orange);
+    border-radius: 50%;
+    right: 10px;
+}
+
+/* ------------ earth ---------- */
+.earth {
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, var(--color1) 0%, var(--color1) 90%, var(--color2) 90%, var(--color2) 100%);
+    background-size: 120px;
+    left: 0;
+    bottom: 7%;
+    /* animation: earthMovement 1s linear infinite; */
+}
+
+.earth div {
+    width: 150px;
+    height: 150px;
+    top: -130px;
+    left: 10%;
+    clip-path: polygon(0% 25%, 7% 25%, 7% 35%, 12% 35%, 12% 40%, 20% 40%, 20% 45%, 30% 45%, 30% 40%, 38% 40%, 38% 35%, 43% 35%, 43% 30%, 48% 30%, 48% 25%, 55% 25%, 55% 4%, 58% 4%, 58% 0%, 88% 0%, 88% 4%, 90% 4%, 90% 20%, 70% 20%, 70% 25%, 85% 25%, 85% 30%, 65% 30%, 65% 35%, 75% 35%, 75% 45%, 70% 45%, 70% 40%, 65% 40%, 65% 50%, 60% 50%, 60% 55%, 55% 55%, 55% 60%, 50% 60%, 50% 80%, 55% 80%, 55% 85%, 45% 85%, 45% 70%, 40% 70%, 40% 65%, 35% 65%, 35% 70%, 30% 70%, 30% 75%, 25% 75%, 25% 80%, 30% 80%, 30% 85%, 20% 85%, 20% 65%, 15% 65%, 15% 60%, 10% 60%, 10% 55%, 5% 55%, 5% 50%, 0% 50%, 0% 25%);
+    /* animation: DinosaurWalking 1s linear infinite; */
+}
+
+.earth div::after {
+    content: "";
+    width: 10px;
+    height: 7px;
+    left: 93px;
+    top: 10px;
+}
+
+/* ----------- stopwatch --------- */
+.stopwatch {
+    color: var(--color2);
+    width: 200px;
+    height: 200px;
+    opacity: .8;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 15;
+
+}
+
+/* ----------- stopwatch counter ---------- */
+.stopwatch div:nth-child(1) {
+    font-size: 35px;
+    margin-left: -7px;
+}
+
+/* --------- stopwatch buttons --------- */
+.buttons {
+    justify-content: space-around;
+}
+.buttons button{
+    box-shadow: 0 0 5px var(--color2);
+    transition: all .3s;
+}
+.buttons button:hover{
+    background-color: rgb(255, 68, 0);
+}
+.reset {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.play-pause-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    border-radius: 50%;
+}
+
+/* --------- sky ----------- */
+.sky {
+    width: 200%;
+    height: 120px;
+    top: 90px;
+}
+
+/* --------- star -------- */
+.sky::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    left: 40%;
+    top: -45%;
+    box-shadow: 50px 50px 0 -9px white, 35px 35px 0 -13px white, 65px 65px 0 -13px white, 65px 35px 0 -13px white, 35px 65px 0 -13px white, 50px 41px 0 -12px white, 50px 35px 0 -12px white, 59px 50px 0 -12px white, 65px 50px 0 -12px white, 50px 59px 0 -12px white, 50px 65px 0 -12px white, 41px 50px 0 -12px white, 35px 50px 0 -12px white;
+}
+
+/* -------- moon ------- */
+.moon {
+    top: -15%;
+    right: 30%;
+    width: 50px;
+    height: 120px;
+    background-color: white;
+    clip-path: polygon(0% 0%, 0% 5.5%, 11% 5.5%, 11% 11%, 22% 11%, 22% 16.5%, 33% 16.5%, 33% 22%, 44% 22%, 44% 27.5%, 55% 27.5%, 55% 71.5%, 44% 71.5%, 44% 77%, 33% 77%, 33% 82.5%, 22% 82.5%, 22% 88%, 11% 88%, 11% 93.5%, 0% 93.5%, 0% 100%, 22% 100%, 22% 93.5%, 33% 93.5%, 33% 88%, 44% 88%, 44% 82.5%, 55% 82.5%, 55% 77%, 66% 77%, 66% 71.5%, 77% 71.5%, 77% 66%, 88% 66%, 88% 60.5%, 100% 60.5%, 100% 38.5%, 88% 38.5%, 88% 33%, 77% 33%, 77% 27.5%, 66% 27.5%, 66% 22%, 55% 22%, 55% 16.5%, 44% 16.5%, 44% 11%, 33% 11%, 33% 5.5%, 22% 5.5%, 22% 0%, 0% 0%);
+}
+
+/* ----------- clouds --------- */
+.cloud1,
+.cloud2,
+.cloud3 {
+    width: 20%;
+    height: 30px;
+    z-index: 2;
+    max-width: 180px;
+    min-width: 90px;
+    transform: rotate(180deg);
+}
+
+/* --- cloud 1 --- */
+.cloud1 {
+    top: 0px;
+    left: 0%;
+    clip-path: polygon(0 0, 0 33%, 14% 33%, 14% 66%, 28% 66%, 28% 100%, 56% 100%, 56% 75%, 70% 75%, 70% 50%, 84% 50%, 84% 25%, 98% 25%, 98% 0, 0 0);
+}
+
+/* --- cloud 2 --- */
+.cloud2 {
+    top: 50%;
+    left: 90%;
+    clip-path: polygon(0 0, 0 50%, 14% 50%, 14% 100%, 42% 100%, 42% 75%, 56% 75%, 56% 75%, 56% 50%, 70% 50%, 70% 25%, 100% 25%, 100% 0, 0 0);
+}
+
+/* --- cloud 3 --- */
+.cloud3 {
+    bottom: 0px;
+    left: 30%;
+    clip-path: polygon(0% 0%, 0% 25%, 12% 25%, 12% 50%, 24% 50%, 24% 75%, 36% 75%, 36% 100%, 60% 100%, 60% 75%, 72% 75%, 72% 50%, 84% 50%, 84% 25%, 100% 25%, 100% 0%, 0% 0%);
+}
+
+/* ------------ cactuses ----------- */
+.cactuses {
+    width: 200%;
+    height: 200px;
+    bottom: 25%;
+    /* animation: CactusMovement 7s linear infinite; */
+}
+
+.cactuses div {
+    transform: rotate(180deg);
+    bottom: 0%;
+}
+
+/* --- cactus 1 --- */
+.cactus1 {
+    width: 40px;
+    height: 100px;
+    right: 80%;
+    clip-path: polygon(38% 0%, 38% 45%, 22.8% 45%, 22.8% 50%, 15.2% 50%, 15.2% 55%, 7.6% 55%, 7.6% 60%, 0% 60%, 0% 75%, 7.6% 75%, 7.6% 80%, 15.2% 80%, 15.2% 75%, 22.8% 75%, 22.8% 55%, 38% 55%, 38% 95%, 45.6% 95%, 45.6% 100%, 60.8% 100%, 60.8% 95%, 68.4% 95%, 68.4% 45%, 76% 45%, 76% 70%, 83.6% 70%, 83.6% 75%, 91.2% 75%, 91.2% 70%, 100% 70%, 100% 45%, 91.2% 45%, 91.2% 40%, 83.6% 40%, 83.6% 35%, 68.4% 35%, 68.4% 0%, 38% 0%);
+}
+
+/* --- cactus 2 --- */
+.cactus2 {
+    width: 60px;
+    height: 120px;
+    right: 100%;
+    clip-path: polygon(38% 0%, 38% 45%, 22.8% 45%, 22.8% 50%, 15.2% 50%, 15.2% 55%, 7.6% 55%, 7.6% 60%, 0% 60%, 0% 75%, 7.6% 75%, 7.6% 80%, 15.2% 80%, 15.2% 75%, 22.8% 75%, 22.8% 55%, 38% 55%, 38% 95%, 45.6% 95%, 45.6% 100%, 60.8% 100%, 60.8% 95%, 68.4% 95%, 68.4% 45%, 76% 45%, 76% 70%, 83.6% 70%, 83.6% 75%, 91.2% 75%, 91.2% 70%, 100% 70%, 100% 45%, 91.2% 45%, 91.2% 40%, 83.6% 40%, 83.6% 35%, 68.4% 35%, 68.4% 0%, 38% 0%);
+}
+
+/* --- cactus 3 --- */
+.cactus3 {
+    width: 75px;
+    height: 135px;
+    right: 30%;
+    clip-path: polygon(38% 0%, 38% 45%, 22.8% 45%, 22.8% 50%, 15.2% 50%, 15.2% 55%, 7.6% 55%, 7.6% 60%, 0% 60%, 0% 85%, 7.6% 85%, 7.6% 95%, 15.2% 95%, 15.2% 75%, 22.8% 75%, 22.8% 55%, 38% 55%, 38% 95%, 45.6% 95%, 45.6% 100%, 60.8% 100%, 60.8% 95%, 68.4% 95%, 68.4% 45%, 76% 45%, 76% 60%, 83.6% 60%, 83.6% 65%, 91.2% 65%, 91.2% 60%, 100% 60%, 100% 45%, 91.2% 45%, 91.2% 40%, 83.6% 40%, 83.6% 35%, 68.4% 35%, 68.4% 0%, 38% 0%);
+}
+
+/* --- cactus 4 --- */
+.cactus4 {
+    width: 50px;
+    height: 70px;
+    right: 26%;
+    clip-path: polygon(38% 0%, 38% 45%, 22.8% 45%, 22.8% 50%, 15.2% 50%, 15.2% 55%, 7.6% 55%, 7.6% 60%, 0% 60%, 0% 75%, 7.6% 75%, 7.6% 80%, 15.2% 80%, 15.2% 75%, 22.8% 75%, 22.8% 55%, 38% 55%, 38% 95%, 45.6% 95%, 45.6% 100%, 60.8% 100%, 60.8% 95%, 68.4% 95%, 68.4% 45%, 76% 45%, 76% 70%, 83.6% 70%, 83.6% 75%, 91.2% 75%, 91.2% 70%, 100% 70%, 100% 45%, 91.2% 45%, 91.2% 40%, 83.6% 40%, 83.6% 35%, 68.4% 35%, 68.4% 0%, 38% 0%);
+}
+
+/* -------------- animation ------------- */
+/* Cactus movement */
+@keyframes cactusMovement {
+    0% {
+        right: -250%;
+    }
+
+    100% {
+        right: 50%;
+    }
+}
+
+/* The movement of the sky */
+@keyframes movementSky {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: -240%;
+    }
+}
+
+/* earth movement */
+@keyframes earthMovement {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: -120px;
+    }
+}
+
+/* Dinosaur walking */
+@keyframes dinosaurWalking {
+    from {
+        clip-path: polygon(0% 25%, 7% 25%, 7% 35%, 12% 35%, 12% 40%, 20% 40%, 20% 45%, 30% 45%, 30% 40%, 38% 40%, 38% 35%, 43% 35%, 43% 30%, 48% 30%, 48% 25%, 55% 25%, 55% 4%, 58% 4%, 58% 0%, 88% 0%, 88% 4%, 90% 4%, 90% 20%, 70% 20%, 70% 25%, 85% 25%, 85% 30%, 65% 30%, 65% 35%, 75% 35%, 75% 45%, 70% 45%, 70% 40%, 65% 40%, 65% 50%, 60% 50%, 60% 55%, 55% 55%, 55% 60%, 50% 60%, 50% 80%, 55% 80%, 55% 85%, 45% 85%, 45% 70%, 40% 70%, 40% 65%, 30% 65%, 30% 70%, 35% 70%, 35% 75%, 40% 75%, 30% 75%, 20% 75%, 20% 65%, 15% 65%, 15% 60%, 10% 60%, 10% 55%, 5% 55%, 5% 50%, 0% 50%, 0% 25%);
+
+    }
+
+    to {
+        clip-path: polygon(0% 25%, 7% 25%, 7% 35%, 12% 35%, 12% 40%, 20% 40%, 20% 45%, 30% 45%, 30% 40%, 38% 40%, 38% 35%, 43% 35%, 43% 30%, 48% 30%, 48% 25%, 55% 25%, 55% 4%, 58% 4%, 58% 0%, 88% 0%, 88% 4%, 90% 4%, 90% 20%, 70% 20%, 70% 25%, 85% 25%, 85% 30%, 65% 30%, 65% 35%, 75% 35%, 75% 45%, 70% 45%, 70% 40%, 65% 40%, 65% 50%, 60% 50%, 60% 55%, 55% 55%, 55% 60%, 50% 60%, 50% 70%, 55% 70%, 55% 75%, 45% 75%, 45% 70%, 40% 70%, 40% 65%, 35% 65%, 35% 70%, 30% 70%, 30% 75%, 25% 75%, 25% 80%, 30% 80%, 30% 85%, 20% 85%, 20% 65%, 15% 65%, 15% 60%, 10% 60%, 10% 55%, 5% 55%, 5% 50%, 0% 50%, 0% 25%);
+
+    }
+}
